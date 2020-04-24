@@ -1,5 +1,5 @@
 require('dotenv').config();
-const DB_CONFIG = process.env.DB_CONFIG || 'postgresql://loan:loan@loan-db:5432/loan-db';
+const DB_CONFIG = process.env.DB_CONFIG || 'postgresql://loan:loan@loandb:5432/loandb';
 const { Pool } = require('pg');
 
 const pgconn = new Pool({
