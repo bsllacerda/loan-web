@@ -1,3 +1,3 @@
 node {
-  load '../../pipelines/workspace/build-configs/pipelines/nodejs-pipeline.groovy'
+  load '/var/lib/jenkins/jobs/bsl-lacerda-demo/jobs/pipelines/workspace/build-configs/pipelines/nodejs-pipeline.goovy'
 }
