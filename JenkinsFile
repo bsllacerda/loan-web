@@ -8,8 +8,8 @@ pipeline {
     timeout(time: 20, unit: 'MINUTES') 
   }
   stages {
-    stage('loadpipeline') {
-        node {
+    stage('prepare') {
+        node ('loadpipeline') {
             apply from: 'https://raw.githubusercontent.com/bsllacerda/openshift/dev/build-configs/pipelines/nodejs-pipeline.groovy'
         }
     }
