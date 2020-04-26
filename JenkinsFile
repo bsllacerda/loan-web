@@ -1,5 +1,17 @@
 pipeline {
+  agent {
     node {
-        apply from: 'https://raw.githubusercontent.com/bsllacerda/openshift/dev/build-configs/pipelines/nodejs-pipeline.groovy'
+        label 'nodejs' 
     }
+  }
+  options {
+    timeout(time: 20, unit: 'MINUTES') 
+  }
+  stages {
+    stage('loadpipeline') {
+        node {
+            apply from: 'https://raw.githubusercontent.com/bsllacerda/openshift/dev/build-configs/pipelines/nodejs-pipeline.groovy'
+        }
+    }
+  }   
 }
