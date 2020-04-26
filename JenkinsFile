@@ -1,15 +1,1 @@
-pipeline {
-  agent {
-    node {
-        label 'nodejs' 
-    }
-  }
-  options {
-    timeout(time: 20, unit: 'MINUTES') 
-  }
-  stages {
-    stage('prepare') {
-        apply from: 'https://raw.githubusercontent.com/bsllacerda/openshift/dev/build-configs/pipelines/nodejs-pipeline.groovy'
-    }
-  }   
-}
+apply from: 'https://raw.githubusercontent.com/bsllacerda/openshift/dev/build-configs/pipelines/nodejs-pipeline.groovy'
